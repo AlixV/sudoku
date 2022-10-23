@@ -32,8 +32,7 @@ window.onload = function () {
   setGame();
 };
 
-// Create and populate the board with digits in js
-
+// Create and populate the board with - digits - in js
 function setGame() {
   // digits :  1 -> 9 with a loop
   for (let i = 1; i <= 9; i++) {
@@ -52,21 +51,26 @@ function setGame() {
     document.getElementById("digits").appendChild(number);
   }
 
-  // board :  9 X 9
+  // The board :  9 X 9
   for (let row = 0; row < 9; row++) {
     for (let col = 0; col < 9; col++) {
       let tile = document.createElement("div");
       tile.id = row.toString() + "-" + col.toString();
-
+      tile.classList.add("tile");
       if (row == 2 || row == 5) {
         tile.classList.add("horizontal-line");
       }
       if (col == 2 || col == 5) {
         tile.classList.add("vertical-line");
       }
+      // Prefiled tiles with board array (! board[row][col] Think about it)
+      // if it's a dash, we skip it. so we set the numbers.
+      if (board[row][col] != "-") {
+        tile.innerText = board[row][col];
+      }
 
       tile.addEventListener("click", selectTile);
-      tile.classList.add("tile");
+
       document.getElementById("board").append(tile);
     }
   }
