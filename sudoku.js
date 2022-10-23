@@ -1,5 +1,5 @@
 let numSelected = null;
-let tileSlected = null;
+let tileSelected = null;
 
 var errors = 0;
 
@@ -48,5 +48,15 @@ function setGame() {
 
     // Add it to the digits div
     document.getElementById("digits").appendChild(number);
+  }
+
+  // BOARD 9 X 9
+  for (let row = 0; row < 9; row++) {
+    for (let col = 0; col < 9; col++) {
+      let tile = document.createElement("div");
+      tile.id = row.toString() + "-" + col.toString();
+      tile.classList.add("tile");
+      document.getElementById("board").append(tile);
+    }
   }
 }

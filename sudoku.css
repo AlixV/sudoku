@@ -50,9 +50,11 @@ hr{
 
 /* Created by function setGame */
 .number{
-    width: 48px;
-    height: 48px;
+    /* 44px because 1px*2 and 2px*2 => 50px */
+    width: 44px;
+    height: 44px;
     border : 1px solid darkblue;
+    margin : 2px;
 
     /* texte */
     font-size: 20px;
