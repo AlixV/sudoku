@@ -8,7 +8,7 @@ hr{
 }
 
 #errors{
-    color: red;
+    color: green;
 }
 
 #board{
@@ -26,7 +26,7 @@ hr{
     width: 450px;
     height: 50px;
 
-    background-color:yellow;
+    background-color:lightcyan;
 
     margin: 0 auto; /* to center */
     display: flex;
@@ -37,7 +37,7 @@ hr{
 .tile{
     width: 48px;
     height: 48px;
-    border : 1px solid lightpink;
+    border : 1px solid lightgray;
 
     /* texte */
     font-size: 20px;
@@ -53,7 +53,7 @@ hr{
     /* 44px because 1px*2 and 2px*2 => 50px */
     width: 44px;
     height: 44px;
-    border : 1px solid darkblue;
+    border : 1px solid black;
     margin : 2px;
 
     /* texte */

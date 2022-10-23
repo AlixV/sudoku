@@ -67,6 +67,7 @@ function setGame() {
       // if it's a dash, we skip it. so we set the numbers.
       if (board[row][col] != "-") {
         tile.innerText = board[row][col];
+        tile.classList.add("tile-start");
       }
 
       tile.addEventListener("click", selectTile);
@@ -100,6 +101,21 @@ function selectTile() {
     if (this.innerText != "") {
       return;
     }
-    this.innerText = numSelected.id;
+    // this.innerText = numSelected.id;
+
+    // get coordonates of the tiles to check with solution board
+    // split to have 2 individuals numbers and create an array with them
+    // They are string so we  have to parseInt these digit
+    //"0-0" "0-1"... "3-1"
+    let coordonates = this.id.split("-"); // ["0","0"]
+    let r = parseInt(coordonates[0]);
+    let c = parseInt(coordonates[1]);
+
+    if (solution[r][c] == numSelected.id) {
+      this.innerText = numSelected.id;
+    } else {
+      errors += 1;
+      document.getElementById("errors").innerText = errors;
+    }
   }
 }
