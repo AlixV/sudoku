@@ -34,7 +34,7 @@ hr{
 
 }
 
-tile{
+.tile{
     width: 48px;
     height: 48px;
     border : 1px solid lightpink;
@@ -48,10 +48,11 @@ tile{
     align-items: center;
 }
 
-number{
+/* Created by function setGame */
+.number{
     width: 48px;
     height: 48px;
-    border : 1px solid black;
+    border : 1px solid darkblue;
 
     /* texte */
     font-size: 20px;
